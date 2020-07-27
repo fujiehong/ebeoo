@@ -24,9 +24,9 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/custom.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/font-roboto.css')}}" />
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet" />
+    <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /-->
 
 </head>
 
@@ -39,7 +39,7 @@
     <div class="main-container">
 
 
-
+        @include('shared._messages')
         @yield('content')
 
         <!-- FOOTER -->
