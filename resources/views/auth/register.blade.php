@@ -8,9 +8,9 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="switchable__text">
                         <h2>{{ __('Create an Ebeoo account') }}</h2>
-                        <span class="lead">{{ __('Already have an account?') }}
-                            <br class="hidden-xs hidden-sm" />
-                            <a href="{{route('login')}}">{{ __('Sign In') }}</a>
+                        <span class="lead">{{ __('不想使用邮箱注册，使用') }}
+
+                            <a href="{{route('login')}}">{{ __('手机号注册') }}</a>
                                             </span>
 
                         <form method="POST" action="{{ route('register') }}">
