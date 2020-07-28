@@ -11,8 +11,12 @@
                         {{ __('Enter email address to send a recovery email.') }}
                     </p>
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+
+                        <div class="alert bg--success">
+                            <div class="alert__body">
+                                <span>{{ session('status') }}</span>
+                            </div>
+                            <div class="alert__close">&times</div>
                         </div>
                     @endif
                     <form method="POST" action="{{ route('password.email') }}">

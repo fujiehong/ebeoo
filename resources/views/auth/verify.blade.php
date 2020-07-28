@@ -1,28 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+    <section class="height-100 text-center">
+        <div class="container pos-vertical-center">
+            <div class="row">
+                <div class="col-md-7 col-lg-5">
+                    <h2>{{ __('Verify Your Email Address') }}</h2>
+                    <p class="lead">
 
-                <div class="card-body">
                     @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                        <div class="alert bg--success">
+                            <div class="alert__body">
+                                <span>{{ __('A fresh verification link has been sent to your email address.') }}</span>
+                            </div>
+                            <div class="alert__close">&times;</div>
                         </div>
+
                     @endif
 
                     {{ __('Before proceeding, please check your email for a verification link.') }}
                     {{ __('If you did not receive the email') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn--primary type--uppercase">{{ __('click here to request another') }}</button>.
                     </form>
+                    </p>
+
+                    <span class="type--fine-print block">Dont have an account yet?
+                                <a href="#">Create account</a>
+                            </span>
                 </div>
             </div>
+            <!--end of row-->
         </div>
-    </div>
-</div>
+        <!--end of container-->
+    </section>
+
+
 @endsection
