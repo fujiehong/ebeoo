@@ -137,7 +137,7 @@
                             <ul class="menu-horizontal text-left" >
                                 <li class="dropdown dropdown--hover">
                                         <span class="dropdown__trigger">
-                                            <img alt="avatar" class="avatar image--xxs" src="https://cdn.learnku.com/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/60/h/60" />
+                                            <img alt="avatar" class="avatar image--xxs" src="{{Auth::user()->avatar}}" />
                                             {{ Auth::user()->name }}
                                         </span>
                                     <div class="dropdown__container">
@@ -148,10 +148,10 @@
                                                     <ul class="menu-vertical">
 
                                                         <li>
-                                                            <a href="#">个人中心</a>
+                                                            <a href="{{ route('users.show', Auth::id()) }}">个人中心</a>
                                                         </li>
                                                         <li>
-                                                            <a href="#">编辑资料</a>
+                                                            <a href="{{ route('users.edit', Auth::id()) }}">编辑资料</a>
                                                         </li>
 
                                                         <li class="separate">
@@ -173,14 +173,9 @@
                         </div>
                         <div class="bar__module">
 
-
-
-
-                            <a class="btn btn--sm type--uppercase btn--primary" id="logout" href="#">
-                                <span class="btn__text">退出</span>
+                            <a class="btn btn--sm type--uppercase btn--primary" id="logout" href="{{route('users.show',Auth::id())}}">
+                                <span class="btn__text">个人中心</span>
                             </a>
-
-
 
                         </div>
 
