@@ -19,7 +19,7 @@
                         <div class="text-block">
                             <ul class="menu-vertical">
                                 <li>
-                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-profile;hidden">Profile</a>
+                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-profile;hidden">编辑个人资料</a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-notifications;hidden">Email Notifications</a>
@@ -28,7 +28,7 @@
                                     <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-billing;hidden">Billing Details</a>
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-password;hidden">Password</a>
+                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-password;hidden">修改密码</a>
                                 </li>
                                 <li>
                                     <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-delete;hidden">Delete Account</a>
