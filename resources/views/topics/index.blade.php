@@ -1,7 +1,51 @@
 @extends('layouts.app')
-
+@section('title', '列表')
 @section('content')
-<div class="container">
+
+    <section class="space--sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-9">
+                    <div class="masonry">
+                        <div class="masonry-filter-container d-flex align-items-center">
+                            <span>Category:</span>
+                            <div class="masonry-filter-holder">
+                                <div class="masonry__filters" data-filter-all-text="所有分类"></div>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="masonry__container row">
+
+                            {{-- 列表 --}}
+                            @include('topics._topic_list', ['topics' => $topics])
+                        </div>
+                        <!--end of masonry container-->
+                        {{-- 分页 --}}
+
+
+                        <div class="pagination">
+                            <ol>
+                                {!! $topics->appends(Request::except('page'))->render() !!}
+                            </ol>
+                        </div>
+                    </div>
+                    <!--end masonry-->
+                </div>
+                {{--右边导航栏--}}
+                <div class="col-lg-3 hidden-sm">
+                    <div class="sidebar boxed boxed--border boxed--lg bg--secondary">
+                        @include('topics._sidebar')
+
+                    </div>
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+
+<!--div class="container">
   <div class="col-md-10 offset-md-1">
     <div class="card ">
       <div class="card-header">
@@ -56,6 +100,6 @@
       </div>
     </div>
   </div>
-</div>
+</div-->
 
 @endsection
