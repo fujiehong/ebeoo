@@ -12,6 +12,8 @@
 
     <title>@yield('title', 'Ebeoo') - Smart Cubes</title>
 
+    <meta name="description" content="@yield('description', 'Ebeoo')" />
+
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/stack-interface.css')}}" />
@@ -23,6 +25,8 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/theme.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/custom.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/font-roboto.css')}}" />
+    @yield('styles')
+
 
     <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700" rel="stylesheet" />
@@ -72,6 +76,8 @@
 <script type="text/javascript" src="{{URL::asset('js/spectragram.min.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/smooth-scroll.min.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/scripts.js')}}"></script>
+@yield('scripts')
+
 </body>
 
 </html>

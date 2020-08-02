@@ -1,4 +1,11 @@
-<div class="sidebar__widget">
+<div class="sidebar__widget text-center">
+    <a href="{{ route('topics.create') }}" class="btn btn--primary " aria-label="Left Align">
+        <span class="btn__text"><i class="stack-interface stack-plus-circled"></i>  新建帖子</span>
+
+    </a>
+</div>
+
+<div class="sidebar__widget ">
     <h5>Search site</h5>
     <form>
         <input type="text" name="query" placeholder="Type search here" />

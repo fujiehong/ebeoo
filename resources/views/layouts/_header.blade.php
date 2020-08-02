@@ -135,6 +135,16 @@
 
                         <div class="bar__module">
                             <ul class="menu-horizontal text-left" >
+                                <li >
+                                    <a  href="{{ route('topics.create') }}">
+                                        <i class="stack-interface stack-plus-circled"></i>
+                                    </a>
+                                </li>
+                                <li >
+                                        <span class="dropdown__trigger">
+                                            <i class="stack-interface stack-bell"></i>
+                                        </span>
+                                </li>
                                 <li class="dropdown dropdown--hover">
                                         <span class="dropdown__trigger">
                                             <img alt="avatar" class="avatar image--xxs" src="{{Auth::user()->avatar}}" />
@@ -154,8 +164,9 @@
                                                             <a href="{{ route('users.edit', Auth::id()) }}">编辑资料</a>
                                                         </li>
 
+
                                                         <li class="separate">
-                                                            <form action="{{ route('logout') }}" method="POST">
+                                                            <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('您确定要退出吗？');">
                                                                 {{ csrf_field() }}
                                                                 <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
                                                             </form>
@@ -173,8 +184,8 @@
                         </div>
                         <div class="bar__module">
 
-                            <a class="btn btn--sm type--uppercase btn--primary" id="logout" href="{{route('users.show',Auth::id())}}">
-                                <span class="btn__text">个人中心</span>
+                            <a class="btn btn--sm type--uppercase btn--primary" id="logout" href="{{route('topics.index')}}">
+                                <span class="btn__text">话题</span>
                             </a>
 
                         </div>

@@ -37,4 +37,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //判断是不是业务类用户身份是不是登录用户
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
 }
