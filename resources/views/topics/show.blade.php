@@ -60,13 +60,13 @@
                                             </div>
                                             <!--end article title-->
                                             <div class="article__body">
-                                                <div class="video-cover border--round">
+                                                <!--div class="video-cover border--round">
                                                     <div class="background-image-holder">
                                                         <img alt="image" src="/img/blog-3.jpg" />
                                                     </div>
                                                     <div class="video-play-icon"></div>
                                                     <iframe data-src="/video/video.mp4" allowfullscreen="allowfullscreen"></iframe>
-                                                </div>
+                                                </div-->
                                                 <!--end video cover-->
                                                 <p>
                                                     {!! $topic->body !!}
@@ -87,16 +87,9 @@
 
                                 </div>
                                 <!--end of row-->
-                        <hr>
+
                         @can('update', $topic)
-
-
-
-
-
-
-
-
+                            <hr>
                                     <div class="row">
 
                                         <div class="col-md-2">
@@ -123,21 +116,7 @@
                                             </form>
 
                                         </div>
-
-
-
                                     </div>
-
-
-
-
-
-
-
-
-
-
-
 
                         @endcan
 
@@ -153,100 +132,12 @@
 
                         <div class="row justify-content-center">
                             <div class="col-md-10 col-lg-12">
-                                <div class="comments-form">
-                                    <h4>Leave a comment</h4>
-                                    <form class="row">
-
-                                        <div class="col-12 ">
-
-                                            <textarea rows="4" name="Message" placeholder="Message"></textarea>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <button class="btn  btn--primary" type="submit">评论</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                {{--end Leave a comment --}}
+                                @includeWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic])
                                 <br>
-                                <div class="comments">
+                                @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
 
-                                    <ul class="comments__list">
-                                        <li>
-                                            <div class="comment">
-                                                <div class="comment__avatar">
-                                                    <img alt="Image" src="/img/avatar-round-1.png" />
-                                                </div>
-                                                <div class="comment__body">
-                                                    <h5 class="type--fine-print">Anne Brady</h5>
-                                                    <div class="comment__meta">
-                                                        <span>10th May 2016</span>
-                                                        <a href="#">Reply</a>
-                                                    </div>
-                                                    <p>
-                                                        Affordances food-truck SpaceTeam unicorn disrupt integrate viral pair programming big data pitch deck intuitive intuitive prototype long shadow. Responsive hacker intuitive driven
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <!--end comment-->
-                                            <div class="comment">
-                                                <div class="comment__avatar">
-                                                    <img alt="Image" src="/img/avatar-round-3.png" />
-                                                </div>
-                                                <div class="comment__body">
-                                                    <h5 class="type--fine-print">Jacob Sims</h5>
-                                                    <div class="comment__meta">
-                                                        <span>10th May 2016</span>
-                                                        <a href="#">Reply</a>
-                                                    </div>
-                                                    <p>
-                                                        Prototype intuitive intuitive thought leader personas parallax paradigm long shadow engaging unicorn SpaceTeam fund ideate paradigm.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <!--end comment-->
-                                        </li>
-                                        <li>
-                                            <div class="comment">
-                                                <div class="comment__avatar">
-                                                    <img alt="Image" src="/img/avatar-round-2.png" />
-                                                </div>
-                                                <div class="comment__body">
-                                                    <h5 class="type--fine-print">Kelly Dewitt</h5>
-                                                    <div class="comment__meta">
-                                                        <span>11th May 2016</span>
-                                                        <a href="#">Reply</a>
-                                                    </div>
-                                                    <p>
-                                                        Responsive hacker intuitive driven waterfall is so 2000 and late intuitive cortado bootstrapping venture capital. Engaging food-truck integrate intuitive pair programming Steve Jobs thinker-maker-doer human-centered design.
-                                                    </p>
-                                                    <p>
-                                                        Affordances food-truck SpaceTeam unicorn disrupt integrate viral pair programming big data pitch deck intuitive intuitive prototype long shadow. Responsive hacker intuitive driven
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <!--end comment-->
-                                        </li>
-                                        <li>
-                                            <div class="comment">
-                                                <div class="comment__avatar">
-                                                    <img alt="Image" src="/img/avatar-round-4.png" />
-                                                </div>
-                                                <div class="comment__body">
-                                                    <h5 class="type--fine-print">Luke Smith</h5>
-                                                    <div class="comment__meta">
-                                                        <span>11th May 2016</span>
-                                                        <a href="#">Reply</a>
-                                                    </div>
-                                                    <p>
-                                                        Unicorn disrupt integrate viral pair programming big data pitch deck intuitive intuitive prototype long shadow. Responsive hacker intuitive driven
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <!--end comment-->
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--end comments-->
+
+
 
                     </div>
                 </div>

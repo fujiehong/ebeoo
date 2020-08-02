@@ -19,6 +19,7 @@
                 </div>
                 <div class="card__body">
                     <a href="{{ $topic->link() }}">
+
                         <img src="img/inner-5.jpg" alt="Image" class="border--round">
                     </a>
                     <p>

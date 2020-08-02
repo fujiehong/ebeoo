@@ -48,3 +48,5 @@ Route::resource('categories','CategoriesController',['only'=>['show']]);
 
 //topic上传图片
 Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+//replies回复
+Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
