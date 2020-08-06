@@ -5,6 +5,8 @@ namespace App\Observers;
 use App\Jobs\TranslateSlug;
 use App\Models\Topic;
 use App\Handlers\SlugTranslateHandler;
+use Illuminate\Support\Facades\DB;
+
 // creating, created, updating, updated, saving,
 // saved,  deleting, deleted, restoring, restored
 
@@ -37,8 +39,8 @@ class TopicObserver
         //
     }
 
-    public function updating(Topic $topic)
+    public function deleted(Topic $topic)
     {
-        //
+        DB::table('replies')->where('topic_id', $topic->id)->delete();
     }
 }

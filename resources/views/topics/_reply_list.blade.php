@@ -18,7 +18,8 @@
                     <div class="comment__meta">
                         <span title="{{ $reply->created_at }}">{{ $reply->created_at->diffForHumans() }}</span>
                         <a href="#">回复</a>
-                        <span class="meta float-right " title="删除回复">
+                        @can('destroy', $reply)
+                        <span class="float-right " title="删除回复">
                             <form action="{{ route('replies.destroy', $reply->id) }}"
                                   onsubmit="return confirm('确定要删除此评论？');"
                                   method="post">
@@ -29,7 +30,8 @@
                               </button>
                             </form>
 
-                      </span>
+                        </span>
+                        @endcan
                     </div>
                     <p>
                         {!! $reply->content !!}
@@ -42,49 +44,11 @@
             <!--end comment-->
         </li>
         @endforeach
-
-
-
-
-
-
-
-        <!--li>
-            <div class="comment">
-                <div class="comment__avatar">
-                    <img alt="Image" src="/img/avatar-round-1.png" />
-                </div>
-                <div class="comment__body">
-                    <h5 class="type--fine-print">Anne Brady</h5>
-                    <div class="comment__meta">
-                        <span>10th May 2016</span>
-                        <a href="#">Reply</a>
-                    </div>
-                    <p>
-                        Affordances food-truck SpaceTeam unicorn disrupt integrate viral pair programming big data pitch deck intuitive intuitive prototype long shadow. Responsive hacker intuitive driven
-                    </p>
-                </div>
-            </div>
-
-            <div class="comment">
-                <div class="comment__avatar">
-                    <img alt="Image" src="/img/avatar-round-3.png" />
-                </div>
-                <div class="comment__body">
-                    <h5 class="type--fine-print">Jacob Sims</h5>
-                    <div class="comment__meta">
-                        <span>10th May 2016</span>
-                        <a href="#">Reply</a>
-                    </div>
-                    <p>
-                        Prototype intuitive intuitive thought leader personas parallax paradigm long shadow engaging unicorn SpaceTeam fund ideate paradigm.
-                    </p>
-                </div>
-            </div>
-        </li-->
-
-
-
     </ul>
+    <div class="pagination">
+        <ol>
+            {!! $replies->appends(Request::except('page'))->render() !!}
+        </ol>
+    </div>
 </div>
 <!--end comments-->

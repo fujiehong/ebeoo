@@ -9,8 +9,11 @@
                 <div class="col-lg-3">
                     <div class="boxed boxed--lg boxed--border">
                         <div class="text-block text-center">
+                            <a href="{{route('users.show', [$topic->user_id])}}">
                             <img alt="{{ $topic->user->name }}" src="{{$topic->user->avatar}}" class="image--sm" />
+
                             <span class="h4"><strong>{{$topic->user->name}}</strong></span>
+                            </a>
                             <span>{{$topic->user->introduction}}</span>
                             <span class="label">作者</span>
                         </div>
@@ -86,6 +89,7 @@
                                     </div>
 
 
+
                                 </div>
                                 <!--end of row-->
 
@@ -135,7 +139,7 @@
                             <div class="col-md-10 col-lg-12">
                                 @includeWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic])
                                 <br>
-                                @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->orderBy('updated_at', 'desc')->get()])
+                                @include('topics._reply_list', ['replies' => $topic->replies()->with('user','topic')->orderBy('updated_at', 'desc')->paginate(10)])
 
 
 
