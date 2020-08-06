@@ -4,14 +4,9 @@
 
 
 
-        <div class="notification pos-right pos-top" data-animation="from-top" data-autoshow="200">
+        <div class="notification pos-right pos-top col-md-6 col-lg-5" data-notification-link="trigger" data-animation="from-top" data-autoshow="1000" data-autohide="2000">
             <div class="boxed boxed--border border--round box-shadow">
-                <div class="text-block">
-                    <h5>Notification</h5>
-                    <p>
-                        {{ session()->get($msg) }}
-                    </p>
-                </div>
+                    {{ session()->get($msg) }}
             </div>
         </div>
     @endif

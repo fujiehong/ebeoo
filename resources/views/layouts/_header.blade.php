@@ -137,16 +137,19 @@
                             <ul class="menu-horizontal text-left" >
                                 <li >
                                     <a  href="{{ route('topics.create') }}">
-                                        <i class="stack-interface stack-plus-circled"></i>
+                                        <i class="fa fa-plus"></i>
                                     </a>
                                 </li>
                                 <li >
-                                        <span class="dropdown__trigger">
-                                            <i class="stack-interface stack-bell"></i>
-                                        </span>
+
+                                            <a href="{{route('notifications.index')}}">
+                                            <i class="fa fa-bell-o">{{ Auth::user()->notification_count }}</i>
+                                            </a>
+
                                 </li>
                                 <li class="dropdown dropdown--hover">
                                         <span class="dropdown__trigger">
+
                                             <img alt="avatar" class="avatar image--xxs" src="{{Auth::user()->avatar}}" />
                                             {{ Auth::user()->name }}
                                         </span>

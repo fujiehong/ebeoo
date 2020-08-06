@@ -18,10 +18,17 @@
                     <div class="comment__meta">
                         <span title="{{ $reply->created_at }}">{{ $reply->created_at->diffForHumans() }}</span>
                         <a href="#">回复</a>
-                        <span class="meta float-right ">
-                        <a title="删除回复">
-                          <i class="icon-Remove"></i>删除
-                        </a>
+                        <span class="meta float-right " title="删除回复">
+                            <form action="{{ route('replies.destroy', $reply->id) }}"
+                                  onsubmit="return confirm('确定要删除此评论？');"
+                                  method="post">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                              <button type="submit" class="btn btn--icon fa fa-trash-o">
+                                <span>删除</span>
+                              </button>
+                            </form>
+
                       </span>
                     </div>
                     <p>

@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/jquery.steps.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/theme.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/custom.css')}}" />
+    <link rel="stylesheet" href="{{URL::asset('css/font-awesome.min.css')}}" >
 
 
 

@@ -31,23 +31,24 @@
                         <li class="list-inline-item">
                             <div class="card__action">
                                 <a href="#">
-                                    <i class="material-icons">comment</i>
-                                    <span>{{$topic->reply_count}}</span>
+                                    <i class="fa fa-comment"></i>
+                                    {{$topic->reply_count}}
                                 </a>
                             </div>
                         </li>
                         <li class="list-inline-item">
                             <div class="card__action">
                                 <a href="#">
-                                    <i class="material-icons">favorite</i>
-                                    <span>6</span>
+                                    <i class="fa fa-heart"></i>
+                                    6
+
                                 </a>
                             </div>
                         </li>
                         <li class="list-inline-item">
                             <div class="card__action">
                                 <a href="#">
-                                    <i class="material-icons">share</i>
+                                    <i class="fa fa-share-alt"></i>
                                 </a>
                             </div>
                         </li>

@@ -51,6 +51,7 @@
                                                     <h2>{{ $topic->title }}</h2>
                                                 </a>
                                                 <span>{{ $topic->created_at->diffForHumans() }} </span>
+                                                <span>回复数：{{ $topic->reply_count }} </span>
                                                 <span>
                                                     <a href="#">Web Design</a>
                                                 </span>
@@ -134,7 +135,7 @@
                             <div class="col-md-10 col-lg-12">
                                 @includeWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic])
                                 <br>
-                                @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+                                @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->orderBy('updated_at', 'desc')->get()])
 
 
 

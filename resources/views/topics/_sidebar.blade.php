@@ -1,6 +1,6 @@
 <div class="sidebar__widget text-center">
     <a href="{{ route('topics.create') }}" class="btn btn--primary " aria-label="Left Align">
-        <span class="btn__text"><i class="stack-interface stack-plus-circled"></i>  新建帖子</span>
+        <span class="btn__text"><i class="fa fa-plus"></i>  新建帖子</span>
 
     </a>
 </div>
