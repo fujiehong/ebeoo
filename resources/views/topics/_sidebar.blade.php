@@ -13,7 +13,8 @@
 </div>
 <!--end widget-->
 <div class="sidebar__widget">
-    <h5>Text Widget</h5>
+    <h5>活跃用户</h5>
+    <hr>
     <p>
         Our new digital products will take your workflow to all-new levels of high productivity. We know you'll find everything you need - and more! Start building with Stack.
     </p>
@@ -68,7 +69,7 @@
 </div>
 <!--end widget-->
 <div class="sidebar__widget">
-    <h5>Archives</h5>
+    <h5>资源推荐</h5>
     <ul>
         <li>
             <a href="#">August 2016</a>

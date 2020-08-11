@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Handlers\ImageUploadHandler;
+use App\Handlers\VideoUploadHandler;
 use App\Models\Category;
 use App\Models\Topic;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class TopicsController extends Controller
     {
         if ( ! empty($topic->slug) && $topic->slug != $request->slug) {
 
-            return redirect($topic->link()->paginate(20), 301);
+            return redirect($topic->link(), 301);
         }
 
         return view('topics.show', compact('topic'));
@@ -44,7 +45,9 @@ class TopicsController extends Controller
 
 	public function store(TopicRequest $request,Topic $topic)
 	{
+        dd($request->all());
 	    $topic->fill($request->all());
+
 	    $topic->user_id=Auth::id();
 		$topic->save();
 
@@ -95,5 +98,28 @@ class TopicsController extends Controller
             }
         }
         return $data;
+    }
+
+    public function uploadVideo(Request $request,VideoUploadHandler $uploader)
+    {
+        // 初始化返回数据，默认是失败的
+        $data = [
+            'success'   => false,
+            'msg'       => '上传失败!',
+            'file_path' => ''
+        ];
+        // 判断是否有上传文件，并赋值给 $file
+        if ($file = $request->upload_file) {
+            // 保存图片到本地
+            $result = $uploader->save($file, 'topics', \Auth::id());
+            // 图片保存成功的话
+            if ($result) {
+                $data['file_path'] = $result['path'];
+                $data['msg']       = "上传成功!";
+                $data['success']   = true;
+            }
+        }
+        return $data;
+
     }
 }

@@ -21,22 +21,41 @@
                         <div class="text-block">
                             <ul class="menu-vertical">
                                 <li>
-                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-profile;hidden">编辑个人资料</a>
+                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-profile;hidden">文章数</a>
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-notifications;hidden">Email Notifications</a>
+                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-notifications;hidden">关注数</a>
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-billing;hidden">Billing Details</a>
+                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-billing;hidden">粉丝数</a>
                                 </li>
-                                <li>
-                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-password;hidden">修改密码</a>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle-class=".account-tab:not(.hidden);hidden|#account-delete;hidden">Delete Account</a>
-                                </li>
+
                             </ul>
                         </div>
+                        <hr>
+                        @can('follow', $topic->user)
+
+                            @if (Auth::user()->isFollowing($topic->user_id))
+                                <form action="{{ route('followers.destroy', $topic->user_id) }}" method="post">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class="btn btn--icon btn-outline-info ">
+                                        <i class="fa fa-check"></i>&nbsp&nbsp&nbsp&nbsp 已关注</button>
+                                    </button>
+                                </form>
+                            @else
+                                <form action="{{ route('followers.store', $topic->user_id) }}" method="post">
+                                    {{ csrf_field() }}
+                                    <button type="submit" class=" btn btn--icon btn--primary  ">
+                                                <span class="btn__text">
+                                                    <i class="fa fa-plus"></i>&nbsp&nbsp&nbsp&nbsp 关注</span>
+                                    </button>
+                                </form>
+
+                            @endif
+
+                        @endcan
+
                     </div>
                 </div>
                 <div class="col-lg-9">

@@ -42,6 +42,7 @@
                         <div class="col-md-10 col-lg-12">
 
                                 <h3 class="">
+                                    <i class="fa fa-edit"></i>
 
                                     @if($topic->id)
                                         编辑话题
@@ -53,7 +54,7 @@
                                 <hr>
 
                             @if($topic->id)
-                                <form action="{{ route('topics.update', $topic->id) }}" method="POST" accept-charset="UTF-8">
+                                <form action="{{ route('topics.update', $topic->id) }}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                                     <input type="hidden" name="_method" value="PUT">
                                     @else
                                         <form action="{{ route('topics.store') }}" method="POST" accept-charset="UTF-8">
@@ -77,6 +78,12 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+
+                                                <input id="input-id" type="file" class="file" name="video" >
+
                                             </div>
 
 
@@ -113,6 +120,7 @@
 @section('styles')
 
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/simditor.css')}}" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/fileinput.css')}}"/>
 @stop
 
 @section('scripts')
@@ -120,8 +128,10 @@
     <script type="text/javascript" src="{{ URL::asset('js/hotkeys.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/uploader.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/simditor.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/fileinput.js') }}"></script>
 
     <script>
+
         $(document).ready(function() {
             var editor = new Simditor({
                 textarea: $('#editor'),
@@ -154,7 +164,11 @@
                     'alignment',
                 ],
             });
+
+            
         });
+
+
     </script>
 @stop
 

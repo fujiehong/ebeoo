@@ -63,16 +63,40 @@
                                         <textarea rows="4" name="introduction" id="introduction-field">{{ old('introduction', $user->introduction) }}</textarea>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <!--div class="col-md-12">
                                         <label>用户头像:</label>
-                                        <input type="file" name="avatar" >
+                                        <input type="file" class="file" name="avatar" multiple  data-min-file-count="1" data-theme="fas">
                                         @if($user->avatar)
                                             <div class="boxed boxed--border">
-                                            <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="200" />
+                                                <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="200" />
                                             </div>
                                         @endif
-                                    </div>
+                                    </div-->
+                                    <div class="col-md-12">
+                                        <label>用户头像:</label>
+                                        <div class="boxed boxed--border ">
 
+                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail" style="max-width: 200px; max-height: 150px;">
+                                                    <img src="{{ $user->avatar }}" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+                                                </div>
+                                                <div>
+                                                            <span class="btn default btn-file">
+                                                                <span class="fileinput-new"> 选择 </span>
+                                                                <span class="fileinput-exists"> 换一个 </span>
+                                                                <input type="file" name="avatar"> </span>
+                                                    <a href="javascript:;" class="btn btn--secondary fileinput-exists" data-dismiss="fileinput"> 删除 </a>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    </div>
                                     <div class="col-lg-3 col-md-4">
                                         <button type="submit" class="btn btn--primary type--uppercase">保存</button>
                                     </div>
@@ -180,4 +204,14 @@
         </div>
         <!--end of container-->
     </section>
+@endsection
+
+@section('styles')
+    <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/bootstrap-fileinput.css')}}" />
+@stop
+
+@section('scripts')
+    <script type="text/javascript" src="{{ URL::asset('js/bootstrap-fileinput.js') }}"></script>
+
+
 @stop
