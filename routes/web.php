@@ -58,3 +58,13 @@ Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('f
 
 Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
 Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
+
+
+// 微信开发平台登录
+Route::group(['middleware' => 'web'], function () {
+    Route::get('redirect/driver/{driver}', 'AuthorizationsController@redirectToProvider');
+
+    Route::get('callback/driver/{driver}', 'AuthorizationsController@handleProviderCallback');
+
+    Route::get('getAccessToken/driver/{driver}', 'AuthorizationsController@getAccessToken');
+});
