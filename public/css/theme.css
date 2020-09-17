@@ -409,7 +409,7 @@ section.height-auto .pos-vertical-center {
   }
 }
 /**! 05. Images **/
-img {
+img:not([class*='ke-'] img) {
   max-width: 100%;
   margin-bottom: 1.85714286em;
 }
@@ -1281,7 +1281,7 @@ label {
   font-size: 1.14285714em;
   font-weight: 400;
 }
-input[type],
+input[type]:not([class*='ke-']),
 textarea,
 select {
   -webkit-appearance: none;
@@ -7491,7 +7491,7 @@ select {
 input.field-error {
   border-color: #EBA8A8;
 }
-input[type] + input[type],
+input[type] + input[type]:not([class*='ke-']),
 input[type] + .input-checkbox,
 input[type] + button,
 input[type] + .input-select {
@@ -7505,7 +7505,7 @@ textarea {
   -webkit-transition: 0.3s ease;
   -moz-transition: 0.3s ease;
 }
-input:not([class*='col-']),
+input:not([class*='col-']):not([class*='ke-']),
 select:not([class*='col-']),
 .input-select:not([class*='col-']),
 textarea:not([class*='col-']),

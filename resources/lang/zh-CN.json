@@ -44,5 +44,13 @@
   "Your email address is not verified.": "您的电子邮件尚未验证通过",
   "Whoops!": "哎呦！",
     "captcha": "验证码",
-    "Create an Ebeoo account": "注册Ebeoo账号"
+    "Create an Ebeoo account": "注册Ebeoo账号",
+    "stem toys":"智能玩具",
+    "products": "商品",
+    "about": "关于",
+    "topic":"话题",
+    "CREATE":"新建",
+    "LOGOUT": "注销",
+    "Create Account": "创建账号",
+    "EBEOO":"逸柏"
 }

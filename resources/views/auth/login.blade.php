@@ -62,7 +62,7 @@
 
                             </div>
                             <div class="col-md-12">
-                                <button class="btn btn--primary type--uppercase" type="submit">Login</button>
+                                <button class="btn btn--primary type--uppercase" type="submit">{{__('Login')}}</button>
                             </div>
                         </div>
                         <!--end of row-->

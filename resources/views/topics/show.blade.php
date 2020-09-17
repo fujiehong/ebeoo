@@ -78,9 +78,9 @@
                                                     <a href="#">Web Design</a>
                                                 </span>
                                             </div>
-                                            <div class="article__author  text-center">
+                                            <!--div class="article__author  text-center">
                                                 <h4>{{ $topic->user->name }}</h4>
-                                            </div>
+                                            </div-->
                                             <!--end article title-->
                                             <div class="article__body">
                                                 <!--div class="video-cover border--round">

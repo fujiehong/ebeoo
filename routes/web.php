@@ -10,8 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//本地化en,zh-CN
+Route::get('welcome/{locale}', function ($locale) {
+    App::setLocale($locale);
+    //dd(App::getLocale());
+
+
+    //
+});
+
+Route::get('/lang', 'PagesController@lang')->name('lang');
 
 Route::get('/', 'PagesController@root')->name('root');
+Route::get('/stemtoys', 'PagesController@stemtoys')->name('stemtoys');
+Route::get('/products', 'PagesController@products')->name('products');
+Route::get('/about', 'PagesController@about')->name('about');
 //Route::get('/', 'PagesController@root')->name('root')->middleware('verified');
 //Auth::routes();
 
@@ -48,6 +61,8 @@ Route::resource('categories','CategoriesController',['only'=>['show']]);
 
 //topic上传图片
 Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+
+Route::post('uploadKindeditorImage', 'TopicsController@uploadKindeditorImage')->name('topics.uploadKindeditorImage');
 //replies回复
 Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
 //notification通知
@@ -68,3 +83,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('getAccessToken/driver/{driver}', 'AuthorizationsController@getAccessToken');
 });
+
+
+
+
+Route::any('/wechat', 'WeChatController@serve');

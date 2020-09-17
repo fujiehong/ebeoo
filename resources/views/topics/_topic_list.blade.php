@@ -18,13 +18,35 @@
                     </div>
                 </div>
                 <div class="card__body">
-                    <a href="{{ $topic->link() }}" >
+                        @php
 
-                        <img src="img/inner-5.jpg" alt="Image" class="border--round">
-                    </a>
-                    <p>
-                        {{$topic->title}}
-                    </p>
+                            if(preg_match('/<img.+src=\s*[\'\"]?([^\'\"]*)[\'\"]?.+>/i',$topic->body,$match))
+                            {
+                        //dd($match);
+                        @endphp
+                            <p>
+                                {{$topic->title}}
+
+                            </p>
+                            <a href="{{ $topic->link() }}" >
+                                <img src="{{$match[1]}}" alt="Image" class="border--round"  width="100%">
+                            </a>
+                        @php
+                            }else{
+                        @endphp
+                            <a href="{{ $topic->link() }}" >
+                                <p>
+                                    {{$topic->title}}
+                                </p>
+                            </a>
+
+
+                        @php
+                            }
+
+
+                        @endphp
+
                 </div>
                 <div class="card__bottom">
                     <ul class="list-inline">

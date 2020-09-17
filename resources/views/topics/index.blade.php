@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', '列表')
 @section('content')
-
     <section class="space--sm">
         <div class="container">
             <div class="row">

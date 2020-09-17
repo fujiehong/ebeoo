@@ -7,7 +7,7 @@
     <section class="bg--secondary space--sm">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <!--div class="col-lg-3">
                     <div class="boxed boxed--lg boxed--border">
                         <div class="text-block text-center">
                             <img alt="{{ Auth::user()->name }}" src="{{Auth::user()->avatar}}" class="image--sm" />
@@ -36,8 +36,8 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-9">
+                </div-->
+                <div class="col-lg-12">
                     <div class="boxed boxed--lg boxed--border">
                         <div class="col-md-10 col-lg-12">
 
@@ -80,11 +80,11 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <!--div class="col-md-12">
 
                                                 <input id="input-id" type="file" class="file" name="video" >
 
-                                            </div>
+                                            </div-->
 
 
 
@@ -128,7 +128,9 @@
     <script type="text/javascript" src="{{ URL::asset('js/hotkeys.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/uploader.js') }}"></script>
     <script type="text/javascript" src="{{ URL::asset('js/simditor.js') }}"></script>
+
     <script type="text/javascript" src="{{ URL::asset('js/fileinput.js') }}"></script>
+
 
     <script>
 

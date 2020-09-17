@@ -7,8 +7,9 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail,JWTSubject
 {
     use Notifiable,\Illuminate\Auth\MustVerifyEmail;
 
@@ -18,7 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name','phone', 'email', 'password','avatar','introduction'
+        'name','phone', 'email', 'password','avatar','introduction','weixin_openid', 'weixin_unionid'
     ];
 
     /**
@@ -27,7 +28,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','weixin_openid', 'weixin_unionid'
     ];
 
     /**
@@ -100,6 +101,19 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isFollowing($user_id)
     {
         return $this->followings->contains($user_id);
+    }
+
+
+    //JWT相关
+    public function getJWTIdentifier()
+    {
+        // TODO: Implement getJWTIdentifier() method.
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims()
+    {
+        // TODO: Implement getJWTCustomClaims() method.
+        return [];
     }
 
 

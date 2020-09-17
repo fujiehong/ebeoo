@@ -9,11 +9,11 @@
                 <div class="background-image-holder background--top">
                     <img alt="background" src="img/work-3.jpg" />
                 </div>
-                <div class="container pos-vertical-center">
+                <div class="container pos-vertical-center ">
                     <div class="row">
-                        <div class="col-sm-12">
-                            <h1 class="h1--large">with&nbsp;<b><font color="#EA4335">S</font><font color="#FBBC05">T</font><font color="#34A853">E</font><font color="#4285F4">M</font>&nbsp;TOYS</b></h1>
-                            <p class="lead">all kids have to do to shape tomorrow is paly</p>
+                        <div class="col-sm-12 ">
+                            <p><h1 class="h1--large">with&nbsp;<b><font color="#EA4335">S</font><font color="#FBBC05">T</font><font color="#34A853">E</font><font color="#4285F4">M</font>&nbsp;TOYS</b></h1></p>
+                            <p class="lead">all kids have to do to shape tomorrow is play</p>
                             <a class="btn type--uppercase" href="javascript:void(0)" onclick="toysHandler('')">
                                 <span class="btn__text">Shop now</span>
                             </a>

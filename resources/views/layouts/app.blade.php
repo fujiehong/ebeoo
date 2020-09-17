@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico" media="screen" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" media="screen" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="description" content="Ebeoo Smart Cubes are electronic building blocks that add sound, motion, light, and sensors to young Makers‘ creations. They integrate with LEGO-style bricks for endless projects. Visit the site to learn, buy, and get support." />
 
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{URL::asset('css/font-awesome.min.css')}}" >
 
 
-
+    <!-- 需要导入的Styles -->
     @yield('styles')
 
 
@@ -37,7 +37,7 @@
 
 </head>
 
-<body class="">
+<body class=" ">
 <a id="start"></a>
 
 
@@ -45,12 +45,12 @@
     <!-- MAIN_CONTAINER -->
     <div class="main-container">
 
-
+        <!--message-->
         @include('shared._messages')
+        <!--CONTENT-->
         @yield('content')
-
         <!-- FOOTER -->
-            @include('layouts._footer')
+        @include('layouts._footer')
 
     </div>
 
@@ -79,6 +79,8 @@
 <script type="text/javascript" src="{{URL::asset('js/spectragram.min.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/smooth-scroll.min.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/scripts.js')}}"></script>
+
+<!-- 需要导入scripts -->
 @yield('scripts')
 
 </body>

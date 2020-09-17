@@ -31,7 +31,11 @@ return [
         ],
         'user_topic_body' => [
             'HTML.Doctype'             => 'XHTML 1.0 Transitional',
-            'HTML.Allowed'             => 'div,b,strong,i,em,a[href|title],ul,ol,ol[start],li,p[style],br,span[style],img[width|height|alt|src],*[style|class],pre,hr,code,h2,h3,h4,h5,h6,blockquote,del,table,thead,tbody,tr,th,td',
+
+            //受信任的的元素
+            'HTML.Allowed'             => 'div,b,strong,i,em,a[href|title],ul,ol,ol[start],li,p[style|class],br,span[style],img[width|height|alt|src],*[style|class],pre,hr,code,h2,h3,h4,h5,h6,blockquote,del,table,thead,tbody,tr,th,td,video[class|controls|preload|width|height|src],source[src|type]',
+
+            //受信任的的属性
             'CSS.AllowedProperties'    => 'font,font-size,font-weight,font-style,margin,width,height,font-family,text-decoration,padding-left,color,background-color,text-align',
             'AutoFormat.AutoParagraph' => true,
             'AutoFormat.RemoveEmpty'   => true,
@@ -48,7 +52,7 @@ return [
             'id'  => 'html5-definitions',
             'rev' => 1,
             'debug' => false,
-            'elements' => [
+            'elements' => [//自定义不受支持的元素和属性
                 // http://developers.whatwg.org/sections.html
                 ['section', 'Block', 'Flow', 'Common'],
                 ['nav',     'Block', 'Flow', 'Common'],
@@ -92,7 +96,7 @@ return [
                 ['ins', 'Block', 'Flow', 'Common', ['cite' => 'URI', 'datetime' => 'CDATA']],
                 ['del', 'Block', 'Flow', 'Common', ['cite' => 'URI', 'datetime' => 'CDATA']],
             ],
-            'attributes' => [
+            'attributes' => [//自定义属性
                 ['iframe', 'allowfullscreen', 'Bool'],
                 ['table', 'height', 'Text'],
                 ['td', 'border', 'Text'],

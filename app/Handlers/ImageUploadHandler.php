@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class ImageUploadHandler
 {
-    protected $allowed_ext=["png", "jpg", "gif", "jpeg"];
+    protected $allowed_ext=["png", "jpg", "gif", "jpeg","mp4","mov","flv","wmv"];
     public function save($file, $folder, $file_prefix,$max_width = false)
     {
         // 构建存储的文件夹规则，值如：uploads/images/avatars/201709/21/
