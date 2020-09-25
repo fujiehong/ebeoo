@@ -12,7 +12,8 @@
                 <div class="bar__module">
                     <ul class="menu-horizontal">
                         <li>
-                            <div class="modal-instance">
+                            <a href="#" ><i class="fa fa-user-o"></i>&nbsp;{{__('Login')}}</a>
+                            <!--div class="modal-instance">
                                 <a href="#" class="modal-trigger"><i class="icon-Checked-User"></i>&nbsp;{{__('Login')}}</a>
                                 <div class="modal-container">
                                     <div class="modal-content section-modal">
@@ -76,7 +77,7 @@
                                                                             <button class="btn btn--primary type--uppercase" type="submit">Login</button>
                                                                         </div>
                                                                     </div>
-                                                                    <!--end of row-->
+
                                                                 </form>
                                                                 <span class="type--fine-print block">{{ __('Dont have an account yet?') }}
                                                                     <a href="{{route('register')}}">{{ __('Register') }}?</a>
@@ -90,16 +91,16 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!--end of row-->
+
                                             </div>
-                                            <!--end of container-->
+
                                         </section>
                                     </div>
                                 </div>
-                            </div>
+                            </div-->
                         </li>
                         <li>
-                            <a href="{{route('register')}}"><i class="icon-Add-User"></i>&nbsp;{{__('Create Account')}}</a>
+                            <a href="{{route('register')}}"><i class="fa fa-user-circle-o"></i>&nbsp;{{__('Create Account')}}</a>
                         </li>
                         <li>
                             <a href="#" data-notification-link="search-box"><i class="stack-search"></i></a>

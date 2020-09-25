@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-11">
-                    <div class="slider border--round" data-arrows="true" data-paging="true">
+                    <div class="slider border--round" data-arrows="true" data-paging="true" data-autoplay="true">
                         <ul class="slides">
                             <li>
                                 <img alt="Image" src="/images/stem/stem_1.jpg" />

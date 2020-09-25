@@ -27,7 +27,9 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\User::observe(\App\Observers\UserObserver::class);
 		\App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
+
         JsonResource::withoutWrapping();
-        //
+        //mysql5.6问题
+        \Illuminate\Support\Facades\Schema::defaultStringLength(191);
     }
 }

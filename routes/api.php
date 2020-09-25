@@ -40,6 +40,11 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function() {
 
                 //支持微信及微博 ->where('social_type', 'wechat|weibo')
                 ->name('socials.authorizations.store');
+            // 微信小程序登录
+            Route::post('weapplogin','AuthorizationsController@weappLogin')
+                ->name('api.authorizations.weapplogin');
+            Route::get('weappuserinfo','AuthorizationsController@weappUserInfo')
+                ->name('api.authorizations.weappuserinfo');
             //登录
             Route::post('authorizations', 'AuthorizationsController@store')
                 ->name('api.authorizations.store');
@@ -66,6 +71,9 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function() {
                 // 当前登录用户信息
                 Route::get('user', 'UsersController@me')
                     ->name('user.show');
+                Route::get('getuserinfo', 'UsersController@getUserInfo')
+                    ->name('user.getuserinfo');
+
             });
 
         });

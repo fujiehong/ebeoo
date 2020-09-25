@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/socicon.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/lightbox.min.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/flickity.css')}}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/iconsmind.css')}}" />
+    <!--link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/iconsmind.css')}}" /-->
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/jquery.steps.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/theme.css')}}" />
     <link rel="stylesheet" type="text/css" media="all" href="{{URL::asset('css/custom.css')}}" />

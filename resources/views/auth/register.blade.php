@@ -2,10 +2,15 @@
 
 @section('content')
 
-    <section class="switchable ">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-6 col-lg-5">
+    <section class="imageblock switchable feature-large height-100">
+        <div class="imageblock__content col-lg-6 col-md-4 pos-right">
+            <div class="background-image-holder">
+                <img alt="image" src="img/inner-7.jpg" />
+            </div>
+        </div>
+        <div class="container pos-vertical-center">
+            <div class="row">
+                <div class="col-lg-5 col-md-7">
                     <div class="switchable__text">
                         <h2>{{ __('Create an Ebeoo account') }}</h2>
                         <span class="lead">{{ __('不想使用邮箱注册，使用') }}
@@ -71,9 +76,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-5">
-                    <img alt="Image" class="border--round box-shadow-shallow" src="img/landing-7.jpg" />
-                </div>
+
             </div>
             <!--end of row-->
         </div>

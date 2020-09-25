@@ -36,7 +36,7 @@
             <div class="col-sm-4">
                 <div class="feature feature-1">
                     <div class="feature__body boxed boxed--border">
-                        <img alt="Image" src="/images/smart-cubes/cube-battery.png" />
+                        <img alt="Image" src="/images/smart-cubes/cube-battery.png" width="100%"/>
                         <h5><b>BATTERY CUBE</b></h5>
                         <p>The battery is the power supply that drives the motor to rotate the gears, lights the LED, spins the propeller, buzzes the buzzer, and engages the switch. It puts the move in the motor, and the light in the LED.</p>
                     </div>
@@ -45,7 +45,7 @@
             <div class="col-sm-4">
                 <div class="feature feature-1">
                     <div class="feature__body boxed boxed--border">
-                        <img alt="Image" src="/images/smart-cubes/cube-motor.png" />
+                        <img alt="Image" src="/images/smart-cubes/cube-motor.png" width="100%"/>
                         <h5><b>MOTOR CUBE</b></h5>
                         <p>The motor cube is powerful and can drive a number of fun designs from monster trucks to sci-fi spacewalkers. Strap together color markers with the motor and battery cubes to create brilliant graphic designs, suitable for framing!</p>
                     </div>
@@ -54,7 +54,7 @@
             <div class="col-sm-4">
                 <div class="feature feature-1">
                     <div class="feature__body boxed boxed--border">
-                        <img alt="Image" src="/images/smart-cubes/cube-led.png" />
+                        <img alt="Image" src="/images/smart-cubes/cube-led.png" width="100%"/>
                         <h5><b>LED CUBE</b></h5>
                         <p>Light up just about everything with the LED cube. Make a powerful flashlight with only a toilet tissue roll, a battery and an LED cube! The LED cube is probably the most versatile cube and puts the bright in every creation.</p>
                     </div>

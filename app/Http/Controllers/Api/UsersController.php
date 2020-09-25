@@ -35,4 +35,22 @@ class UsersController extends Controller
 
         return new UserResource($user);
     }
+
+    public function getUserInfo(Request $request)
+    {
+        //$user = $request->user();
+        $session_key=Cache::get($user->id);
+        $miniProgram = app('wechat.mini_program');
+        $decryptedData = $miniProgram->encryptor->decryptData($session_key, $request->iv, $request->encryptedData);
+
+        if(!$user->weixin_unionid){
+
+            $user->weixin_unionid=$decryptedData['unionId'];
+            $user->save();
+
+
+        }
+
+        return  new UserResource($user);
+    }
 }

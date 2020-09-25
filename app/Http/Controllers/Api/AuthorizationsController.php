@@ -8,11 +8,13 @@ use App\Http\Requests\Api\SocialAuthorizationRequest;
 use App\Models\User;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Overtrue\Socialite\AccessToken;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Overtrue\LaravelSocialite\Socialite;
+
 
 class AuthorizationsController extends Controller
 {
@@ -90,6 +92,53 @@ class AuthorizationsController extends Controller
 
 
         return $this->respondWithToken($token)->setStatusCode(201);
+    }
+    //微信小程序登录login.因为有的用户无法在获取到union_id所以。此函数不创建用户记录。
+    public function weappLogin(Request $request)
+    {
+        $code=$request->code;
+        //根据code获取微信openid和session_key;
+        //$miniProgram = \EasyWeChat::miniProgram();
+        $miniProgram = app('wechat.mini_program');
+        //获取微信服务器的session_key和openid
+        $data=$miniProgram->auth->session($code);
+
+
+
+        $expires_in=auth('api')->factory()->getTTL() * 60;
+
+        Cache::put($data['openid'], $data['session_key'], $expires_in);
+
+        return  response()->json([
+            'openid' => $data['openid']
+
+        ]);
+    }
+    //微信小程序通过getUserInfo解密后，可以取得unionid，则生成用户记录。
+    public function weappUserInfo(Request $request)
+    {
+        $session_key=Cache::get($request->openid);
+        $miniProgram = app('wechat.mini_program');
+        $decryptedData = $miniProgram->encryptor->decryptData($session_key, $request->iv, $request->encryptedData);
+        $unionid=$decryptedData['unionId'] ?? null;
+        if($unionid){
+            $user = User::where('weixin_unionid', $decryptedData['unionId'])->first();
+            if (!$user) {
+                $user = User::create([
+                    'name'=>$decryptedData['nickName'],
+                    'avatar'=>$decryptedData['avatarUrl'],
+                    'weixin_openid' => $decryptedData['openId'],
+                    'weixin_unionid'=>$decryptedData['unionId']
+                ]);
+            }
+            //登录换取token令牌。
+
+
+        }
+        $token = Auth::guard('api')->login($user);
+        return  $this->respondWithToken($token)->setStatusCode(200);
+
+
     }
 
 
