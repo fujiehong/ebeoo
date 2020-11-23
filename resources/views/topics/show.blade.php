@@ -75,7 +75,7 @@
                                                 <span>{{ $topic->created_at->diffForHumans() }} </span>
                                                 <span>回复数：{{ $topic->reply_count }} </span>
                                                 <span>
-                                                    <a href="#">Web Design</a>
+                                                    <a href="{{route('users.show', [$topic->user_id])}}">{{ $topic->user->name }}</a>
                                                 </span>
                                             </div>
                                             <!--div class="article__author  text-center">

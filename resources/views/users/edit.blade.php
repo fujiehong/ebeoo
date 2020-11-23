@@ -78,7 +78,7 @@
 
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                                 <div class="fileinput-new thumbnail" style="max-width: 200px; max-height: 150px;">
-                                                    <img src="{{ $user->avatar }}" alt="" />
+                                                    <img src="{{ $user->avatar }}" alt=""  width="100%"/>
                                                 </div>
                                                 <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
                                                 </div>

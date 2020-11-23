@@ -7,6 +7,7 @@ use App\Http\Requests\Api\AuthorizationRequest;
 use App\Http\Requests\Api\SocialAuthorizationRequest;
 use App\Models\User;
 
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Overtrue\Socialite\AccessToken;
@@ -21,6 +22,7 @@ class AuthorizationsController extends Controller
     //用户名密码登录
     public function store(AuthorizationRequest $request)
     {
+
         $username=$request->username;
         //判断username是不是邮件地址。
         filter_var($username, FILTER_VALIDATE_EMAIL) ?
@@ -103,18 +105,30 @@ class AuthorizationsController extends Controller
         //获取微信服务器的session_key和openid
         $data=$miniProgram->auth->session($code);
 
+        $decryptedData = $miniProgram->encryptor->decryptData($data['session_key'], $request->iv, $request->encryptedData);
+        $unionid=$decryptedData['unionId'] ?? null;
+        if($unionid){
+            $user = User::where('weixin_unionid', $decryptedData['unionId'])->first();
+            if (!$user) {
+                $user = User::create([
+                    'name'=>$decryptedData['nickName'],
+                    'avatar'=>$decryptedData['avatarUrl'],
+                    'weixin_openid' => $decryptedData['openId'],
+                    'weixin_unionid'=>$decryptedData['unionId']
+                ]);
+            }
 
 
+
+        }
         $expires_in=auth('api')->factory()->getTTL() * 60;
+        Cache::put($user->id, $data['session_key'], $expires_in);
+        //登录换取token令牌。
+        $token = Auth::guard('api')->login($user);
+        return  $this->respondWithToken($token)->setStatusCode(200);
 
-        Cache::put($data['openid'], $data['session_key'], $expires_in);
-
-        return  response()->json([
-            'openid' => $data['openid']
-
-        ]);
     }
-    //微信小程序通过getUserInfo解密后，可以取得unionid，则生成用户记录。
+    //微信小程序通过getUserInfo解密后，可以取得unionid，则生成用户记录(暂未使用)。
     public function weappUserInfo(Request $request)
     {
         $session_key=Cache::get($request->openid);
@@ -161,7 +175,11 @@ class AuthorizationsController extends Controller
 
     public function destroy()
     {
-        auth('api')->logout();
+
+        if(auth('api')->check()){
+            auth('api')->logout();
+        }
+
         return response(null, 204);
     }
 }

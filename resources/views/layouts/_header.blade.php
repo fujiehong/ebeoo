@@ -102,12 +102,12 @@
                         <li>
                             <a href="{{route('register')}}"><i class="fa fa-user-circle-o"></i>&nbsp;{{__('Create Account')}}</a>
                         </li>
-                        <li>
+                        <!--li>
                             <a href="#" data-notification-link="search-box"><i class="stack-search"></i></a>
                         </li>
                         <li>
                             <a href="#"><i class="stack-basket"></i></a>
-                        </li>
+                        </li-->
                         <li class="dropdown dropdown--absolute">
                                 <span class="dropdown__trigger">
                                     @if (App::getLocale()=='en')
