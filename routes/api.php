@@ -62,9 +62,21 @@ Route::prefix('v1')->namespace('Api')->name('api.v1.')->group(function() {
         ->group(function () {
             // 游客可以访问的接口
 
+            //商品列表
+            Route::get('products','ProductsController@index')->name('products.index');
+            Route::get('products/{product}','ProductsController@show')->name('products.show');
+            Route::get('productcategories','ProductCategoriesController@index')->name('productcategories.index');
+            Route::get('posts','PostsController@index')->name('posts.index');
+            Route::get('topics','TopicsController@index')->name('topics.index');
+
+
             // 某个用户的详情
             Route::get('users/{user}', 'UsersController@show')
                 ->name('users.show');
+
+
+            Route::get('categories','CategoriesController@index')->name('categories.index');
+
 
             // 登录后可以访问的接口
             //Route::middleware('auth:api')->group(function() {

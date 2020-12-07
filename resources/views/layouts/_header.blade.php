@@ -194,6 +194,9 @@
                                 <a href="{{route('stemtoys')}}">  {{ __('stem toys') }}</a>
                             </li>
                             <li>
+                                <a href="{{route('posts.index')}}">  {{ __('discovery') }}</a>
+                            </li>
+                            <li>
                                 <a href="{{route('products')}}"> {{ __('products') }}</a>
                             </li>
 

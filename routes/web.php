@@ -23,10 +23,14 @@ Route::get('/lang', 'PagesController@lang')->name('lang');
 
 Route::get('/', 'PagesController@root')->name('root');
 Route::get('/stemtoys', 'PagesController@stemtoys')->name('stemtoys');
-Route::get('/products', 'PagesController@products')->name('products');
+Route::get('/posts', 'PostsController@index')->name('posts.index');
+Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/about', 'PagesController@about')->name('about');
+
 //Route::get('/', 'PagesController@root')->name('root')->middleware('verified');
 //Auth::routes();
+Route::get('products/{product}', 'ProductsController@show')->name('products.show');
+Route::get('posts/{post}', 'PostsController@show')->name('posts.show');
 
 
 
@@ -73,6 +77,9 @@ Route::delete('/users/followers/{user}', 'FollowersController@destroy')->name('f
 
 Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
 Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
+
+//商品
+//Route::resource('product','ProductsController',['only'=>['index','show']]);
 
 
 // 微信开发平台登录

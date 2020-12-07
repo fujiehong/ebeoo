@@ -37,7 +37,7 @@ class Product extends Model
         'region','code','label','ageRange','original_price','special_price','link'];
 
     //一个商品属于一个分类
-    public function categories(){
+    public function category(){
         return $this->belongsTo(ProductCategory::class);
 
     }
