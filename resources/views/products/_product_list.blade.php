@@ -14,7 +14,7 @@
                         <span>{{$product->summary}}</span>
                     </div>
                     <div>
-                        <span class="h4 inline-block">{{$product->original_price}}</span>
+                        <span class="h4 inline-block"><i class="fa fa-jpy" aria-hidden="true"></i> {{$product->original_price}}</span>
                     </div>
                 </a>
             </div>

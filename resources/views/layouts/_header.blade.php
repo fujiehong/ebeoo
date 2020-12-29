@@ -12,9 +12,11 @@
                 <div class="bar__module">
                     <ul class="menu-horizontal">
                         <li>
-                            <a href="#" ><i class="fa fa-user-o"></i>&nbsp;{{__('Login')}}</a>
+                            <a href="{{route('login')}}" ><i class="fa fa-user"></i>&nbsp;&nbsp;{{__('Login')}}</a>
+
+
                             <!--div class="modal-instance">
-                                <a href="#" class="modal-trigger"><i class="icon-Checked-User"></i>&nbsp;{{__('Login')}}</a>
+                                <a href="#" class="modal-trigger"><i class="fa fa-user-o"></i>&nbsp;{{__('Login')}}</a>
                                 <div class="modal-container">
                                     <div class="modal-content section-modal">
                                         <section class="unpad ">
@@ -100,7 +102,7 @@
                             </div-->
                         </li>
                         <li>
-                            <a href="{{route('register')}}"><i class="fa fa-user-circle-o"></i>&nbsp;{{__('Create Account')}}</a>
+                            <a href="{{route('register')}}"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;{{__('Create Account')}}</a>
                         </li>
                         <!--li>
                             <a href="#" data-notification-link="search-box"><i class="stack-search"></i></a>
@@ -236,10 +238,10 @@
                     @guest
 
                     <div class="bar__module">
-                        <a class="btn btn--sm type--uppercase btn--primary" href="{{route('login')}}">
+                        <a class="btn btn--sm type--uppercase  "  href="{{route('login')}}">
                             <span class="btn__text">{{__('Login')}}</span>
                         </a>
-                        <a class="btn btn--sm type--uppercase " href="{{route('register')}}">
+                        <a class="btn btn--sm type--uppercase btn--primary" href="{{route('register')}}">
                             <span class="btn__text">{{__('Register')}}</span>
                         </a>
                     </div>

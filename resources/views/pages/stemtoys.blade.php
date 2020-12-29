@@ -11,7 +11,7 @@
                 <div class="heading-block text-center">
                     <h1 class="h1--large">meet <b><font color="#4285F4">Smart Cubes</font></b></h1>
                     <p class="lead">Smart Cubes are electronic building blocks that add sound, motion, light, and sensors to young Makers' creations.</p>
-                    <a class="btn btn--primary type--uppercase" href="#">
+                    <a class="btn btn--primary type--uppercase" href="{{route('products')}}">
                         <span class="btn__text">Shop now</span>
                     </a>
                 </div>

@@ -17,7 +17,7 @@
                         <!--end article title-->
                         <div class="article__body">
                             <figure class="col-12 pull-right">
-                                <img alt="Image" src="{{$post->imgurl}}" width="100%"/>
+                                <img alt="Image" src="{{ URL::asset($post->imgurl) }}" width="100%"/>
                                 <figcaption>{{$post->label}}</figcaption>
                             </figure>
                             <p>

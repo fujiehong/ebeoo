@@ -22,7 +22,10 @@
                     <div class="slider border--round boxed--border" data-paging="true" data-arrows="true">
                         <ul class="slides">
                             <li>
-                                <img alt="Image" src="{{$product->image}}" />
+                                <a href="{{ URL::asset($product->image) }}" data-lightbox="true">
+                                    <img alt="Image" src="{{ URL::asset($product->image) }}" width="100%"/>
+                                </a>
+                                <!--img alt="Image" src="{{ URL::asset($product->image) }}" /-->
                             </li>
 
                         </ul>
@@ -32,8 +35,8 @@
                 <div class="col-md-5 col-lg-4">
                     <h4>{{$product->title}}</h4>
                     <div class="text-block">
-                        <span class="h4 type--strikethrough inline-block">{{$product->original_price}}</span>
-                        <span class="h4 inline-block">{{$product->special_price}}</span>
+                        <span class="h4 type--strikethrough inline-block"><i class="fa fa-jpy" aria-hidden="true"></i> {{$product->original_price}}</span>
+                        <span class="h4 inline-block"><i class="fa fa-jpy" aria-hidden="true"></i> {{$product->special_price}}</span>
                     </div>
                     <p>
                          {{$product->description}}

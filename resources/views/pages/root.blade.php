@@ -14,7 +14,7 @@
                         <div class="col-sm-12 ">
                             <p><h1 class="h1--large">with&nbsp;<b><font color="#EA4335">S</font><font color="#FBBC05">T</font><font color="#34A853">E</font><font color="#4285F4">M</font>&nbsp;TOYS</b></h1></p>
                             <p class="lead">all kids have to do to shape tomorrow is play</p>
-                            <a class="btn type--uppercase" href="javascript:void(0)" onclick="toysHandler('')">
+                            <a class="btn type--uppercase" href="{{route('products')}}">
                                 <span class="btn__text">Shop now</span>
                             </a>
                         </div>
@@ -35,7 +35,7 @@
                 <div class="col-md-5 col-sm-7 mt--2">
                     <h1 class="h1--large"><b>Handware</b></h1>
                     <p class="lead">Clean and contemporary style to suit a range of purposes marketing.</p>
-                    <a class="btn btn--primary type--uppercase" href="stem/en/smart-advice">
+                    <a class="btn btn--primary type--uppercase" href="{{route('posts.index')}}">
                         <span class="btn__text">Learn More &raquo;</span>
                     </a>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="col-md-5 col-sm-7">
                     <h1 class="h1--large"><b>Software</b></h1>
                     <p class="lead">Multiple font and colour scheme options mean that dramatically altering the look.</p>
-                    <a class="btn btn--primary type--uppercase" href="stem/en/stem-club">
+                    <a class="btn btn--primary type--uppercase" href="{{route('topics.index')}}">
                         <span class="btn__text">Learn More &raquo;</span>
                     </a>
                 </div>
