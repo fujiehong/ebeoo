@@ -127,7 +127,7 @@
                                         <div class="col-md-1 dropdown__content">
                                             <ul class="menu-vertical text-left">
                                                 <li>
-                                                    <a href="{{route('lang',array('lang'=>'zh-CN'))}}">简体</a>
+                                                    <a href="{{route('lang',array('lang'=>'zh-CN'))}}">中文</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{route('lang',array('lang'=>'en'))}}">ENG</a>
@@ -161,13 +161,13 @@
     <div class="bar bar--sm visible-xs">
         <div class="container">
             <div class="row">
-                <div class="col-xs-3 col-sm-2">
-                    <a href="/en">
+                <div class="col-3 col-md-2">
+                    <a href="{{route('root')}}">
                         <img class="logo logo-dark" alt="logo" src="/images/logo-color.png" />
                         <!--img class="logo logo-light" alt="logo" src="/images/logo-light.png" /-->
                     </a>
                 </div>
-                <div class="col-xs-9 col-sm-10 text-right">
+                <div class="col-9 col-md-10 text-right">
                     <a href="#" class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs">
                         <i class="icon icon--sm stack-interface stack-menu"></i>
                     </a>
@@ -189,9 +189,71 @@
                     </div>
                     <!--end module-->
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5 text-center text-left-xs text-left-sm">
                     <div class="bar__module">
                         <ul class="menu-horizontal text-left">
+                            <!--li class="dropdown">
+                                <span class="dropdown__trigger">shop</span>
+                                <div class="dropdown__container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="dropdown__content col-lg-2 col-md-4">
+                                                <ul class="menu-vertical">
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('ALL')}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('LAUNCH KITS')}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('BUILDS')}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('CUBES')}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('PARTS')}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('STEM / EDUCATE')}}
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('RETAIL PARTNERS')}}
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <span class="dropdown__trigger">BUILDS</span>
+                            </li>
+                            <li class="dropdown">
+                                <span class="dropdown__trigger">STEM</span>
+                            </li>
+                            <li class="dropdown">
+                                <span class="dropdown__trigger">ABOUT</span>
+                            </li-->
+
+
+
+
                             <li>
                                 <a href="{{route('stemtoys')}}">  {{ __('stem toys') }}</a>
                             </li>

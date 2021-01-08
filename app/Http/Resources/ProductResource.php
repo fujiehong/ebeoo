@@ -14,6 +14,11 @@ class ProductResource extends JsonResource
      */
     public function toArray($request)
     {
+        //判断image里是否存在http:或https:如果不存在，加上相应APP_URL
+        if(!preg_match("/^(http:\/\/|https:\/\/).*$/",$this->image)){
+            $this->image=env('APP_URL').'/'.$this->image;
+        }
+
         return [
             "id"=>$this->id,
             "status"=>$this->status,

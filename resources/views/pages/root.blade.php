@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-sm-12 ">
                             <p><h1 class="h1--large">with&nbsp;<b><font color="#EA4335">S</font><font color="#FBBC05">T</font><font color="#34A853">E</font><font color="#4285F4">M</font>&nbsp;TOYS</b></h1></p>
-                            <p class="lead">all kids have to do to shape tomorrow is play</p>
+                            <p class="lead"><span class="h4 inline-block typed-text typed-text--cursor color--white" data-typed-strings="all kids have to do to shape tomorrow is play"></span></p>
                             <a class="btn type--uppercase" href="{{route('products')}}">
                                 <span class="btn__text">Shop now</span>
                             </a>

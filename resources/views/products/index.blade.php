@@ -13,9 +13,13 @@
                             <img alt="background" src="images/stem/stem_3.jpg" />
                         </div>
                         <div class="pos-vertical-center col-md-6 col-lg-5 pl-5">
-                            <h2>Build a premium, responsive digital storefront.</h2>
+
+                            <div class="typed-headline">
+
+                                <span class="h3 inline-block typed-text typed-text--cursor color--white" data-typed-strings="BBSKID Smart Blocks"></span>
+                            </div>
                             <p class="lead">
-                                Stack offers unique styling for selling digital goods, including multiple shop and product layouts &mdash; and all common utility pages.
+                                Individual smart blocks to expand your collection , mini creations to spark your imagination ,our kit comes with smart blocks and all the parts you need for builds
                             </p>
                         </div>
                     </div>

@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @throws \Exception
-     */
+
 
     public function render($request, Exception $exception)
     {
@@ -62,6 +62,13 @@ class Handler extends ExceptionHandler
             return response($exception->getMessage(), 401);
         }
 
+        return parent::render($request, $exception);
+    }
+     * */
+
+
+    public function render($request, Exception $exception)
+    {
         return parent::render($request, $exception);
     }
 }

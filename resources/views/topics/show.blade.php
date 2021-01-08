@@ -5,7 +5,7 @@
 
     <section class="bg--secondary space--sm">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-3">
                     <div class="boxed boxed--lg boxed--border">
                         <div class="text-block text-center">
