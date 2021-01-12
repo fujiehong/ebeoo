@@ -27,6 +27,15 @@ Route::get('/posts', 'PostsController@index')->name('posts.index');
 Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/about', 'PagesController@about')->name('about');
 
+//SBB
+Route::get('/sbb', 'SBB\PagesController@root')->name('sbb');
+Route::get('/sbb/partners', 'SBB\PagesController@partners')->name('partners');
+Route::get('/sbb/products', 'SBB\ProductsController@index')->name('sbb.products');
+Route::get('/sbb/collections/{productCategory}', 'SBB\ProductCategoriesController@show')->name('collections');
+Route::get('/sbb/collections', 'SBB\ProductCategoriesController@collections')->name('productcategories');
+Route::get('/sbb/collection/cubes', 'SBB\ProductCategoriesController@cubes')->name('cubes');
+Route::get('/sbb/products/{product}', 'SBB\ProductsController@show')->name('sbb.products.show');
+
 //Route::get('/', 'PagesController@root')->name('root')->middleware('verified');
 //Auth::routes();
 Route::get('products/{product}', 'ProductsController@show')->name('products.show');

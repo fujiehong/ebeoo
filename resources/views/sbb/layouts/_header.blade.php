@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="bar__module">
-                    <span class="type--fade">Ebeoo.com | 逸柏</span>
+                    <span class="type--fade">BBSKID.COM | 伴宝士</span>
                 </div>
             </div>
             <div class="col-md-6 text-right text-left-xs text-left-sm">
@@ -163,7 +163,9 @@
             <div class="row">
                 <div class="col-3 col-md-2">
                     <a href="{{route('root')}}">
-                        <img class="logo logo-dark" alt="logo" src="/images/logo-color.png" />
+                        <!--img class="logo logo-dark" alt="logo" src="/images/logo-color.png" /-->
+                        <img class="logo logo-dark" alt="logo" src="/images/circuit-cubes-icon_x100.png" />
+
                         <!--img class="logo logo-light" alt="logo" src="/images/logo-light.png" /-->
                     </a>
                 </div>
@@ -177,14 +179,15 @@
     </div>
 
     <!-- MENU -->
-    <nav id="menu1" class="bar bar--sm bar-1 bg--dark hidden-xs" data-scroll-class='366px:pos-fixed'>
+    <nav id="menu1" class="bar bar--sm bar-1 bg--twitter hidden-xs" data-scroll-class='366px:pos-fixed'>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-1 col-sm-2 hidden-xs">
                     <div class="bar__module">
                         <a href="/">
                             <!--img class="logo logo-dark" alt="logo" src="/images/logo-color.png" /-->
-                            <img class="logo logo-light" alt="logo" src="/images/logo-light.png" />
+                            <!--img class="logo logo-light" alt="logo" src="/images/logo-light.png" /-->
+                            <img class="logo logo-twitter" alt="logo" src="/images/circuit-cubes-icon_x100.png" />
                         </a>
                     </div>
                     <!--end module-->
@@ -192,45 +195,45 @@
                 <div class="col-lg-5 text-center text-left-xs text-left-sm">
                     <div class="bar__module">
                         <ul class="menu-horizontal text-left">
-                            <!--li class="dropdown">
-                                <span class="dropdown__trigger">shop</span>
+                            <li class="dropdown dropdown--hover">
+                                <span class="dropdown__trigger">{{__('shop')}}</span>
                                 <div class="dropdown__container">
                                     <div class="container">
                                         <div class="row">
                                             <div class="dropdown__content col-lg-2 col-md-4">
                                                 <ul class="menu-vertical">
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('sbb.products')}}">
                                                             {{__('ALL')}}
                                                         </a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('collections',[1])}}">
                                                             {{__('LAUNCH KITS')}}
                                                         </a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('collections',[2])}}">
                                                             {{__('BUILDS')}}
                                                         </a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('collections',[3])}}">
                                                             {{__('CUBES')}}
                                                         </a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('collections',[4])}}">
                                                             {{__('PARTS')}}
                                                         </a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('collections',[5])}}">
                                                             {{__('STEM / EDUCATE')}}
                                                         </a>
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('partners')}}">
                                                             {{__('RETAIL PARTNERS')}}
                                                         </a>
                                                     </li>
@@ -241,21 +244,137 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="dropdown">
-                                <span class="dropdown__trigger">BUILDS</span>
+                            <li class="dropdown dropdown--hover">
+                                <span class="dropdown__trigger">{{__('builds')}}</span>
+                                <div class="dropdown__container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="dropdown__content  col-lg-2 col-md-4">
+                                                <ul class="menu-vertical">
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__("ALL")}}
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__("ANIMALS")}}
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__("ART")}}
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__("CRAFTS")}}
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__("LEGO")}}
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__("VEHICLES")}}
+                                                        </a>
+
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__("JOIN THE CLUB")}}
+                                                        </a>
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="dropdown">
-                                <span class="dropdown__trigger">STEM</span>
+                            <li class="dropdown dropdown--hover">
+                                <span class="dropdown__trigger">{{__('stem')}}</span>
+                                <div class="dropdown__container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="dropdown__content  col-lg-2 col-md-4">
+                                                <ul class="menu-vertical">
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('STEM STARTER KIT')}}
+
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('CLASSROOM')}}
+
+                                                        </a>
+                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
                             </li>
-                            <li class="dropdown">
-                                <span class="dropdown__trigger">ABOUT</span>
-                            </li-->
+                            <li class="dropdown dropdown--hover">
+                                <span class="dropdown__trigger">{{__('about')}}</span>
+                                <div class="dropdown__container">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="dropdown__content  col-lg-2 col-md-4">
+                                                <ul class="menu-vertical">
+                                                    <li class="">
+                                                        <a href="{{route('about')}}">
+                                                            {{__('OUR STORY')}}
+
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('PRESS')}}
+
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('YOUTUBE')}}
+
+                                                        </a>
+                                                    </li>
+                                                    <li class="">
+                                                        <a href="#">
+                                                            {{__('DOWNLOADS')}}
+
+                                                        </a>
+                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
 
 
 
 
-                            <li>
-                                <a href="{{route('sbb')}}">  {{ __('stem toys') }}</a>
+                            <!--li>
+                                <a href="{{route('stemtoys')}}">  {{ __('stem toys') }}</a>
                             </li>
                             <li>
                                 <a href="{{route('posts.index')}}">  {{ __('discovery') }}</a>
@@ -269,7 +388,7 @@
                             </li>
                             <li>
                                 <a href="{{route('about')}}"> {{ __('about') }}</a>
-                            </li>
+                            </li-->
                         </ul>
                     </div>
                 </div>
