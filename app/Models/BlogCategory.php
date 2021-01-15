@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class BlogCategory extends Model
 {
-    public $timestamps = false;
-
-    protected $fillable = [
-        'name', 'description',
+    public $timestamps=false;
+    protected $fillable=[
+        'name','description',
     ];
 }

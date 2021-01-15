@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="bar__module">
-                    <span class="type--fade">Ebeoo.com | 逸柏</span>
+                    <span class="type--fade">BBSKID.COM | 伴宝士</span>
                 </div>
             </div>
             <div class="col-md-6 text-right text-left-xs text-left-sm">
@@ -163,7 +163,7 @@
             <div class="row">
                 <div class="col-3 col-md-2">
                     <a href="{{route('root')}}">
-                        <img class="logo logo-dark" alt="logo" src="/images/logo-color.png" />
+                        <img class="logo logo-dark" alt="logo" src="/images/logo_bbskid.png" />
                         <!--img class="logo logo-light" alt="logo" src="/images/logo-light.png" /-->
                     </a>
                 </div>
@@ -184,7 +184,7 @@
                     <div class="bar__module">
                         <a href="/">
                             <!--img class="logo logo-dark" alt="logo" src="/images/logo-color.png" /-->
-                            <img class="logo logo-light" alt="logo" src="/images/logo-light.png" />
+                            <img class="logo logo-light" alt="logo" src="/images/logo_bbskid.png" />
                         </a>
                     </div>
                     <!--end module-->

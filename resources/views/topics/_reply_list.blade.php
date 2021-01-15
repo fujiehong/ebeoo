@@ -17,7 +17,7 @@
 
                     <div class="comment__meta">
                         <span title="{{ $reply->created_at }}">{{ $reply->created_at->diffForHumans() }}</span>
-                        <a href="#">回复</a>
+
                         @can('destroy', $reply)
                         <span class="float-right " title="删除回复">
                             <form action="{{ route('replies.destroy', $reply->id) }}"

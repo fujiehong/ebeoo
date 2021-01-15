@@ -11,7 +11,7 @@ class ProductsController extends Controller
 {
     public function index(Product $product)
     {
-        $products=$product->with( 'category')->paginate(8);
+        $products=$product->with( 'category')->where('status','1')->paginate(8);
         $productCategory='';
 
         return view('sbb.products.index',compact('products','productCategory'));

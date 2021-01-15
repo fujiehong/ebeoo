@@ -20,4 +20,8 @@ class PagesController extends Controller
     {
         return view('sbb.pages.partners');
     }
+    public function club()
+    {
+        return view('sbb.pages.club');
+    }
 }

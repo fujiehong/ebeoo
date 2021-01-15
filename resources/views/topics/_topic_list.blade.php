@@ -96,7 +96,7 @@
         </article>
     </div-->
 
-    @if ( ! $loop->last)
+    @if ( ! $topic->last)
         <hr>
     @endif
 

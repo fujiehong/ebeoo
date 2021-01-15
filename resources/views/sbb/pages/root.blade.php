@@ -141,7 +141,7 @@
                 <div class="masonry__container row">
                     <div class="masonry__item col-md-4 col-12" data-masonry-filter="Digital">
                         <div class="project-thumb hover-element border--round ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[1])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy-mashup-helicopter-small.gif" />
@@ -159,7 +159,7 @@
                     <!--end item-->
                     <div class="masonry__item col-md-4 col-12" data-masonry-filter="Print">
                         <div class="project-thumb hover-element border--round ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[2])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy.gif" />
@@ -172,7 +172,7 @@
                     <!--end item-->
                     <div class="masonry__item col-md-4 col-12" data-masonry-filter="Branding">
                         <div class="project-thumb hover-element border--round ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[2])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy-build-mashup-332-digger-small.gif" />
@@ -227,7 +227,7 @@
                 <div class="masonry__container row">
                     <div class="masonry__item col-md-4 col-12" >
                         <div class="project-thumb hover-element ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[1])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy-mashup-helicopter-small.gif" />
@@ -253,7 +253,7 @@
 
                     <div class="masonry__item col-md-4 col-12" >
                         <div class="project-thumb hover-element  ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[2])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy-build-mashup-332-digger-small.gif" />
@@ -275,7 +275,7 @@
 
                     <div class="masonry__item col-md-4 col-12" >
                         <div class="project-thumb hover-element  ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[3])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy-build-mashup-332-digger-small.gif" />
@@ -308,7 +308,7 @@
                     <!--end item-->
                     <div class="masonry__item col-md-4 col-12" >
                         <div class="project-thumb hover-element  ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[4])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy-mashup-helicopter-small.gif" />
@@ -334,7 +334,7 @@
                     <!--end item-->
                     <div class="masonry__item col-md-4 col-12" >
                         <div class="project-thumb hover-element  ">
-                            <a href="#">
+                            <a href="{{route('sbb.products.show',[5])}}">
                                 <div class="hover-element__initial">
                                     <div class="background-image-holder">
                                         <img alt="background" src="images/circuit-cubes-lego-stem-toy-build-mashup-332-digger-small.gif" />

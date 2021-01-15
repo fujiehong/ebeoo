@@ -2,12 +2,15 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\ProductCategory;
+use App\Models\Category;
 use App\Models\Product;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use Encore\Admin\Widgets\Table;
+use Illuminate\Support\Str;
 
 class ProductsController extends AdminController
 {
@@ -28,38 +31,52 @@ class ProductsController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Product());
+        $grid->paginate(10);
+        $grid->quickSearch('title');
+
+        $grid->selector(function (Grid\Tools\Selector $selector) {
+            $selector->select('category_id', '分类', ProductCategory::all()->pluck('name', 'id'));
+        });
+        //$grid->fixColumns(0, -1);
+
 
         $grid->column('id', __('Id'));
-        $grid->column('status', __('Status'))->bool();
-        $grid->column('stock', __('Stock'));
-        $grid->column('sales', __('Sales'));
-        $grid->column('rank', __('Rank'));
-        $grid->column('title', __('title'));
+
+        $grid->column('title', __('title'))->editable('textarea')->ucfirst()->help('这一列是title');
+
+        $grid->column('status', __('启用'))->switch();
+        $grid->column('image', __('Image'))->image('', 80,50);
+        $grid->column('category_id', __('分类'))->editable('select', ProductCategory::all()->pluck('name', 'id'));
+        //$grid->column('stock', __('Stock'));
+        //$grid->column('sales', __('Sales'));
+        $grid->column('rank', __('Rank'))->editable();
 
 
 
-        $grid->column('note', __('Note'));
-        $grid->column('image', __('Image'))->image('', 100,50);
-        $grid->column('brand', __('Brand'));
-        $grid->column('summary', __('Summary'));
+        //$grid->column('note', __('Note'))->editable('textarea');
+
+        $grid->column('brand', __('Brand'))->editable();
+        $grid->column('summary', __('Summary'))->editable('textarea');;
         //$grid->column('description', __('Description'));
-        $grid->column('specification', __('Specification'));
-        $grid->column('dimension', __('Dimension'));
-        $grid->column('shipment', __('Shipment'));
-        $grid->column('category_id', __('Category id'));
-        $grid->column('category.name');
+        $grid->column('description')->limit(20)->width(200);
+        //$grid->column('specification', __('Specification'));
+        $grid->column('dimension', __('Dimension'))->editable();
+        //$grid->column('shipment', __('Shipment'));
 
-        $grid->column('subject', __('Subject'));
-        $grid->column('interest', __('Interest'));
-        $grid->column('region', __('Region'));
-        $grid->column('code', __('Code'));
-        $grid->column('label', __('Label'));
-        $grid->column('ageRange', __('AgeRange'));
-        $grid->column('original_price', __('Original price'));
-        $grid->column('special_price', __('Special price'));
-        $grid->column('link', __('Link'));
-        $grid->column('created_at', __('Created at'));
+        //$grid->column('subject', __('Subject'));
+        //$grid->column('interest', __('Interest'));
+        //$grid->column('region', __('Region'));
+        //$grid->column('code', __('Code'));
+        $grid->column('label', __('Label'))->label('primary');
+        //$grid->column('ageRange', __('AgeRange'));
+        $grid->column('original_price', __('原价'));
+        $grid->column('special_price', __('特价'));
+        //$grid->column('link', __('Link'));
+        //$grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+
+
+
 
         return $grid;
     }
@@ -113,29 +130,33 @@ class ProductsController extends AdminController
     {
         $form = new Form(new Product());
 
-        $form->switch('status', __('Status'))->default(1);
+        $form->switch('status', __('启用'))->default(1);
+        $form->select('category_id', '分类')->options(ProductCategory::all()->pluck('name', 'id'));
         $form->number('stock', __('Stock'));
         $form->number('sales', __('Sales'));
         $form->number('rank', __('Rank'));
-        $form->text('title', __('Title'))->default(' ');
+        $form->text('title', __('标题'))->default(' ');
         $form->text('note', __('Note'))->default(' ');
-        $form->image('image', __('Image'));
-        $form->text('brand', __('Brand'));
+        $form->image('image', __('商品图片'));
+        $form->text('brand', __('品牌'));
         $form->text('summary', __('Summary'));
         $form->textarea('description', __('Description'));
         $form->textarea('specification', __('Specification'));
         $form->text('dimension', __('Dimension'));
         $form->text('shipment', __('Shipment'));
-        $form->number('category_id', __('Category id'));
         $form->text('subject', __('Subject'))->default(' ');
         $form->text('interest', __('Interest'));
         $form->text('region', __('Region'));
         $form->text('code', __('Code'));
         $form->text('label', __('Label'));
         $form->text('ageRange', __('AgeRange'));
-        $form->decimal('original_price', __('Original price'))->default(0.00);
-        $form->decimal('special_price', __('Special price'))->default(0.00);
+        $form->decimal('original_price', __('原价'))->default(0.00);
+        $form->decimal('special_price', __('特价'))->default(0.00);
         $form->textarea('link', __('Link'));
+        $form->display('created_at', '创建时间');
+        $form->display('updated_at', '修改时间');
+        $form->confirm('确定提交吗？');
+
 
         return $form;
     }

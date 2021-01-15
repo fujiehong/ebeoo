@@ -28,18 +28,18 @@ class UserController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('avatar', __('Avatar'))->image('', 45,45);
-        $grid->column('name', __('Name'));
-        $grid->column('phone', __('Phone'))->copyable();
-        $grid->column('email', __('Email'))->copyable();
-        $grid->column('introduction', __('Introduction'));
+        $grid->column('name', __('Name'))->limit(20)->width(100);
+        $grid->column('phone', __('Phone'))->copyable()->width(120);
+        $grid->column('email', __('Email'))->width(200);
+        $grid->column('introduction', __('自我简介'))->limit(20)->width(200);
         //$grid->column('email_verified_at', __('Email verified at'));
         //$grid->column('password', __('Password'));
         //$grid->column('weixin_openid', __('Weixin openid'));
-        $grid->column('weixin_unionid', __('Weixin unionid'));
+        $grid->column('weixin_unionid', __('微信'))->width(100);
         //$grid->column('remember_token', __('Remember token'));
 
-        $grid->column('updated_at', __('Updated at'));
-        $grid->column('created_at', __('Created at'));
+        $grid->column('updated_at', __('更新时间'));
+        $grid->column('created_at', __('创建时间'));
 
         //$grid->column('notification_count', __('Notification count'));
 
@@ -94,6 +94,7 @@ class UserController extends AdminController
         $form->image('avatar', __('Avatar'));
         $form->text('introduction', __('Introduction'));
         $form->number('notification_count', __('Notification count'));
+        $form->confirm('确定提交吗？');
 
         return $form;
     }

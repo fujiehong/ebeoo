@@ -23,6 +23,26 @@
             </li>
         </ul>
     </section>
+    <section class="cover height-70 imagebg text-center slider ">
+        <ul class="slides">
+            <li class="imagebg" data-overlay="0">
+                <div class="background-image-holder background-image-holder">
+                    <img alt="background" src="images/power-your-builds.png" />
+                </div>
+                <div class="container pos-vertical-center">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <h1 class="h1--large"><b><font color="#EA4335">POWER&nbsp; </font><font color="#4285F4">YOUR&nbsp; </font><font color="#FBBC05"> BUILDS</font></b></h1>
+                            <p class="lead"><span class="h4 inline-block typed-text typed-text--cursor color--primary" data-typed-strings="all kids have to do to shape tomorrow is play"></span></p>
+                            <a class="btn btn--primary type--uppercase" href="{{route('sbb')}}">
+                                <span class="btn__text"> LET'S BUILD &raquo;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
     <!-- SECTION_HANDWARE -->
     <section class="imageblock switchable switchable--switch feature-large bg--dark space--sm">
         <div class="imageblock__content col-md-6 col-sm-4 pos-right hidden-xs">

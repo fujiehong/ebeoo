@@ -15,5 +15,7 @@ Route::group([
     $router->resource('products', ProductsController::class);
     $router->resource('posts', PostsController::class);
     $router->resource('users', UserController::class);
+    $router->resource('blogs', BlogsController::class);
+    $router->resource('blog-replies', BlogRepliesController::class);
 
 });

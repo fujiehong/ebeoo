@@ -83,14 +83,7 @@
                                             </div-->
                                             <!--end article title-->
                                             <div class="article__body">
-                                                <!--div class="video-cover border--round">
-                                                    <div class="background-image-holder">
-                                                        <img alt="image" src="/img/blog-3.jpg" />
-                                                    </div>
-                                                    <div class="video-play-icon"></div>
-                                                    <iframe data-src="/video/video.mp4" allowfullscreen="allowfullscreen"></iframe>
-                                                </div-->
-                                                <!--end video cover-->
+
                                                 <p>
                                                     {!! $topic->body !!}
                                                 </p>

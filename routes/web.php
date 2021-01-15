@@ -30,11 +30,17 @@ Route::get('/about', 'PagesController@about')->name('about');
 //SBB
 Route::get('/sbb', 'SBB\PagesController@root')->name('sbb');
 Route::get('/sbb/partners', 'SBB\PagesController@partners')->name('partners');
-Route::get('/sbb/products', 'SBB\ProductsController@index')->name('sbb.products');
+Route::get('/sbb/club', 'SBB\PagesController@club')->name('club');
+Route::get('/sbb/products', 'SBB\ProductsController@index')->name('sbb.products.all');
 Route::get('/sbb/collections/{productCategory}', 'SBB\ProductCategoriesController@show')->name('collections');
 Route::get('/sbb/collections', 'SBB\ProductCategoriesController@collections')->name('productcategories');
 Route::get('/sbb/collection/cubes', 'SBB\ProductCategoriesController@cubes')->name('cubes');
 Route::get('/sbb/products/{product}', 'SBB\ProductsController@show')->name('sbb.products.show');
+Route::get('/sbb/blogs/{blogCategory}', 'SBB\BlogCategoriesController@show')->name('sbb.blogs.show');
+Route::get('/sbb/blogs/builds/{blog}/{slug?}', 'SBB\BlogsController@show')->name('sbb.builds.show');
+Route::get('/sbb/blogs', 'SBB\BlogCategoriesController@all')->name('sbb.blogs.all');
+
+
 
 //Route::get('/', 'PagesController@root')->name('root')->middleware('verified');
 //Auth::routes();

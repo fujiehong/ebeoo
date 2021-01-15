@@ -164,7 +164,7 @@
                 <div class="col-3 col-md-2">
                     <a href="{{route('root')}}">
                         <!--img class="logo logo-dark" alt="logo" src="/images/logo-color.png" /-->
-                        <img class="logo logo-dark" alt="logo" src="/images/circuit-cubes-icon_x100.png" />
+                        <img class="logo logo-dark" alt="logo" src="/images/logo_bbskid.png" />
 
                         <!--img class="logo logo-light" alt="logo" src="/images/logo-light.png" /-->
                     </a>
@@ -187,7 +187,7 @@
                         <a href="/">
                             <!--img class="logo logo-dark" alt="logo" src="/images/logo-color.png" /-->
                             <!--img class="logo logo-light" alt="logo" src="/images/logo-light.png" /-->
-                            <img class="logo logo-twitter" alt="logo" src="/images/circuit-cubes-icon_x100.png" />
+                            <img class="logo logo-twitter" alt="logo" src="/images/logo_bbskid.png" />
                         </a>
                     </div>
                     <!--end module-->
@@ -203,7 +203,7 @@
                                             <div class="dropdown__content col-lg-2 col-md-4">
                                                 <ul class="menu-vertical">
                                                     <li class="">
-                                                        <a href="{{route('sbb.products')}}">
+                                                        <a href="{{route('sbb.products.all')}}">
                                                             {{__('ALL')}}
                                                         </a>
                                                     </li>
@@ -252,43 +252,43 @@
                                             <div class="dropdown__content  col-lg-2 col-md-4">
                                                 <ul class="menu-vertical">
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('sbb.blogs.all')}}">
                                                             {{__("ALL")}}
                                                         </a>
 
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('sbb.blogs.show',['1'])}}">
                                                             {{__("ANIMALS")}}
                                                         </a>
 
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('sbb.blogs.show',['2'])}}">
                                                             {{__("ART")}}
                                                         </a>
 
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('sbb.blogs.show',['4'])}}">
                                                             {{__("CRAFTS")}}
                                                         </a>
 
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('sbb.blogs.show',['6'])}}">
                                                             {{__("LEGO")}}
                                                         </a>
 
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('sbb.blogs.show',['9'])}}">
                                                             {{__("VEHICLES")}}
                                                         </a>
 
                                                     </li>
                                                     <li class="">
-                                                        <a href="#">
+                                                        <a href="{{route('club')}}">
                                                             {{__("JOIN THE CLUB")}}
                                                         </a>
 

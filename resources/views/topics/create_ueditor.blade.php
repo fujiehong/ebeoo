@@ -104,41 +104,14 @@
 
 
 @stop
+<!--引入ueditor-->
+@include('vendor.ueditor.assets')
 
 @section('scripts')
-
-
-
-
-    <!-- 编辑器源码文件 -->
-    <script type="text/javascript" src="{{ URL::asset('js/Ueditor/ueditor.config.js') }}"></script>
-    <!-- 配置语言文件 -->
-    <script type="text/javascript" src="{{ URL::asset('js/Ueditor/ueditor.all.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/Ueditor/ueditor.parse.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/Ueditor/lang/zh-cn/zh-cn.js') }}"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/Ueditor/third-party/video-js/video.js') }}"></script>
-
-
-
-
 
     <script type="text/javascript">
 
         var ue = UE.getEditor('body');
-
-        //cont.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
-        //ue.ready(function() {
-
-           // ue.setContent(cont,false);
-
-        //});
-
-
-
-
-
-
-
 
     </script>
 @stop

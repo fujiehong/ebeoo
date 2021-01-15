@@ -17,6 +17,7 @@ class CreateProductCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name')->index()->comment('名称');
             $table->text('description')->nullable()->comment('描述');
+            $table->integer('product_count')->default(0)->comment('商品数');
         });
     }
 
